@@ -41,5 +41,11 @@ defmodule ProjectEuler.MultiplesOf3Or5Test do
     test "returns false for 7" do
       refute MultiplesOf3Or5.multiple_of_5?(7), "should return false for 7"
     end
+
+    test "raises for non-integers" do
+      assert_raise FunctionClauseError, fn ->
+        MultiplesOf3Or5.multiple_of_5?("foo")
+      end
+    end
   end
 end
