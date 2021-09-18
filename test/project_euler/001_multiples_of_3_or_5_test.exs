@@ -9,7 +9,7 @@ defmodule ProjectEuler.MultiplesOf3Or5Test do
     for n <- @multiples_of_3 do
       test "returns true for #{n}" do
         n = unquote(Macro.escape(n))
-        assert MultiplesOf3Or5.multiple_of_3?(n), "should return true for a multiple of 3"
+        assert MultiplesOf3Or5.multiple_of_3?(n), "should return true for #{n}"
       end
     end
 
@@ -17,8 +17,23 @@ defmodule ProjectEuler.MultiplesOf3Or5Test do
     for n <- @invalid_multiples_of_3 do
       test "returns false for #{n}" do
         n = unquote(Macro.escape(n))
-        refute MultiplesOf3Or5.multiple_of_3?(n), "should return false for a non-multiple of 3"
+        refute MultiplesOf3Or5.multiple_of_3?(n), "should return false for #{n}"
       end
+    end
+  end
+
+  describe "multiple_of_5?/1" do
+    @multiples_of_5 [5, 10, 15, 20, 25, 2555]
+
+    for n <- @multiples_of_5 do
+      test "returns true for #{n}" do
+        n = unquote(Macro.escape(n))
+        assert MultiplesOf3Or5.multiple_of_5?(n), "should return true for #{n}"
+      end
+    end
+
+    test "returns false for 7" do
+      refute MultiplesOf3Or5.multiple_of_5?(7), "should return false for 7"
     end
   end
 end
