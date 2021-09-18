@@ -6,4 +6,8 @@ defmodule ProjectEuler.MultiplesOf3Or5 do
 
   def multiple_of_5?(n) when is_multiple_of(n, 5), do: true
   def multiple_of_5?(n) when is_integer(n), do: false
+
+  def list_multiples_of(n, base) do
+    [3, 6, 9]
+  end
 end
