@@ -69,5 +69,18 @@ defmodule ProjectEuler.MultiplesOf3Or5Test do
     test "returns a list of multiples of 24 below 200" do
       assert [24, 48, 72, 96, 120, 144, 168, 192] = MultiplesOf3Or5.list_multiples_of(200, 24)
     end
+
+    test "raises for non-integers" do
+      assert_raise FunctionClauseError, fn ->
+        MultiplesOf3Or5.list_multiples_of("foo", 5)
+        MultiplesOf3Or5.list_multiples_of(5, [:bar])
+      end
+    end
+  end
+
+  describe "sum_multiples_of_3_or_5/1" do
+    test "returns a sum of the multiples of 3 or 5 below 10" do
+      assert MultiplesOf3Or5.sum_multiples_of_3_or_5(10) == 23
+    end
   end
 end
