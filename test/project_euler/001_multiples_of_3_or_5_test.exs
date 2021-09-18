@@ -4,12 +4,13 @@ defmodule ProjectEuler.MultiplesOf3Or5Test do
   alias ProjectEuler.MultiplesOf3Or5
 
   describe "multiple_of_3?/1" do
-    test "returns true for 3" do
-      assert MultiplesOf3Or5.multiple_of_3?(3), "should return true for a multiple of 3"
-    end
+    @multiples_of_3 [3, 9,]
 
-    test "returns true for 9" do
-      assert MultiplesOf3Or5.multiple_of_3?(9), "should return true for a multiple of 3"
+    for n <- @multiples_of_3 do
+      test "returns true for #{n}" do
+        n = unquote(Macro.escape(n))
+        assert MultiplesOf3Or5.multiple_of_3?(n), "should return true for a multiple of 3"
+      end
     end
 
     test "returns false for 5" do
