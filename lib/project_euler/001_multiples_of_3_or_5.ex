@@ -6,7 +6,8 @@ defmodule ProjectEuler.MultiplesOf3Or5 do
   def multiple_of_3?(n), do: multiple_of?(n, 3)
   def multiple_of_5?(n), do: multiple_of?(n, 5)
 
-  def list_multiples_of(n, base) do
+  @spec list_multiples_of(non_neg_integer, non_neg_integer) :: [non_neg_integer]
+  def list_multiples_of(n, base) when is_integer(n) and is_integer(base) do
     1..n
     |> Enum.filter(&multiple_of?(&1, base))
   end
