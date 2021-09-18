@@ -4,7 +4,7 @@ defmodule ProjectEuler.MultiplesOf3Or5Test do
   alias ProjectEuler.MultiplesOf3Or5
 
   describe "multiple_of_3?/1" do
-    @multiples_of_3 [3, 9,]
+    @multiples_of_3 [3, 6, 9, 12, 24]
 
     for n <- @multiples_of_3 do
       test "returns true for #{n}" do
