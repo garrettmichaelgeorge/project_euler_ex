@@ -8,6 +8,7 @@ defmodule ProjectEuler.MultiplesOf3Or5 do
   def multiple_of_5?(n) when is_integer(n), do: false
 
   def list_multiples_of(n, base) do
-    [3, 6, 9]
+    1..n
+    |> Enum.filter(&multiple_of_3?/1)
   end
 end

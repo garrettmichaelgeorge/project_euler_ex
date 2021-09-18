@@ -50,8 +50,16 @@ defmodule ProjectEuler.MultiplesOf3Or5Test do
   end
 
   describe "list_multiples_of/2" do
-    test "returns a list of multiples of 3 below the given integer" do
+    test "returns a list of multiples of 3 below 10" do
       assert [3, 6, 9] = MultiplesOf3Or5.list_multiples_of(10, 3)
+    end
+
+    test "returns a list of multiples of 3 below 20" do
+      assert [3, 6, 9, 12, 15, 18] = MultiplesOf3Or5.list_multiples_of(20, 3)
+    end
+
+    test "returns a list of multiples of 3 below 30" do
+      assert [3, 6, 9, 12, 15, 18, 21, 24, 27, 30] = MultiplesOf3Or5.list_multiples_of(30, 3)
     end
   end
 end
