@@ -87,16 +87,16 @@ defmodule ProjectEuler.MultiplesOf3Or5Test do
   end
 
   describe "sum_multiples_of_3_or_5/1" do
-    # test "returns a sum of the multiples of 3 or 5 below 10" do
-    #   assert MultiplesOf3Or5.sum_multiples_of_3_or_5(10) == 23
-    # end
+    test "returns a sum of the multiples of 3 or 5 below 10" do
+      assert MultiplesOf3Or5.sum_multiples_of(10, [3, 5]) == 23
+    end
 
-    # test "returns a sum of the multiples of 3 or 5 below 20" do
-    #   assert MultiplesOf3Or5.sum_multiples_of_3_or_5(20) == 78
-    # end
+    test "returns a sum of the multiples of 3 or 5 below 30" do
+      assert MultiplesOf3Or5.sum_multiples_of_3_or_5(30) == 195
+    end
 
-    # test "returns a sum of the multiples of 3 or 5 below 30" do
-    #   assert MultiplesOf3Or5.sum_multiples_of_3_or_5(30) == 195
-    # end
+    test "raises for non-integers" do
+      assert_raise FunctionClauseError, fn -> MultiplesOf3Or5.sum_multiples_of_3_or_5(["foo"]) end
+    end
   end
 end
