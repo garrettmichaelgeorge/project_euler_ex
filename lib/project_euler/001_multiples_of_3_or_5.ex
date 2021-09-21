@@ -28,9 +28,13 @@ defmodule ProjectEuler.MultiplesOf3Or5 do
     |> Enum.uniq()
   end
 
-  def sum_multiples_of_3_or_5(n) do
+  def sum_multiples_of(n, base_list) when is_integer(n) and is_list(base_list) do
     n
-    |> list_multiples_of([3, 5])
+    |> list_multiples_of(base_list)
     |> Enum.sum()
+  end
+
+  def sum_multiples_of_3_or_5(n) when is_integer(n) do
+    sum_multiples_of(n, [3, 5])
   end
 end
