@@ -23,7 +23,7 @@ defmodule ProjectEuler.MultiplesOf3Or5Test do
     for n <- @invalid_multiples_of_3 do
       test "returns false for #{n}" do
         n = unquote(Macro.escape(n))
-        refute MultiplesOf3Or5.multiple_of_3?(n), "should return false for #{n}"
+        refute MultiplesOf3Or5.multiple_of?(n, 3), "should return false for #{n}"
       end
     end
 
