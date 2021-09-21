@@ -95,6 +95,10 @@ defmodule ProjectEuler.MultiplesOf3Or5Test do
       assert MultiplesOf3Or5.sum_multiples_of(30, [3, 5]) == 195
     end
 
+    test "returns a sum of the multiples of 3 or 5 below 1000" do
+      assert MultiplesOf3Or5.sum_multiples_of(1000, [3, 5]) == 233_168
+    end
+
     test "raises for non-integers" do
       assert_raise FunctionClauseError, fn -> MultiplesOf3Or5.sum_multiples_of(["foo"], [2]) end
       assert_raise FunctionClauseError, fn -> MultiplesOf3Or5.sum_multiples_of(2, "foo") end
