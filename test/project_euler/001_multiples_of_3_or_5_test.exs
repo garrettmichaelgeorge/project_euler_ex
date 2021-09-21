@@ -3,12 +3,6 @@ defmodule ProjectEuler.MultiplesOf3Or5Test do
 
   alias ProjectEuler.MultiplesOf3Or5
 
-  describe "run/0" do
-    test "returns the correct answer" do
-      assert MultiplesOf3Or5.run() == 233_168
-    end
-  end
-
   describe "multiple_of?/2" do
     @multiples_of_3 [3, 6, 9, 12, 24, 249, 1005, 81_456]
 
