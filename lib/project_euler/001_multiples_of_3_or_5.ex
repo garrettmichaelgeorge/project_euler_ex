@@ -41,8 +41,4 @@ defmodule ProjectEuler.MultiplesOf3Or5 do
     |> list_multiples_of(divisors)
     |> Enum.sum()
   end
-
-  def sum_multiples_of_3_or_5(n) when is_integer(n) do
-    sum_multiples_of(n, [3, 5])
-  end
 end
