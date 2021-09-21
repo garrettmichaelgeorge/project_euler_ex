@@ -25,12 +25,12 @@ defmodule ProjectEuler.MultiplesOf3Or5 do
       acc ++ list_multiples_of(n, base)
     end)
     |> Enum.sort()
+    |> Enum.uniq()
   end
 
   def sum_multiples_of_3_or_5(n) do
     n
-    |> list_multiples_of(3)
-    |> Enum.concat(list_multiples_of(n, 5))
+    |> list_multiples_of([3, 5])
     |> Enum.sum()
   end
 end

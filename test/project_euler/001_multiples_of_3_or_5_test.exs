@@ -59,15 +59,23 @@ defmodule ProjectEuler.MultiplesOf3Or5Test do
     end
 
     test "returns a list of multiples of 3 below 30" do
-      assert [3, 6, 9, 12, 15, 18, 21, 24, 27, 30] = MultiplesOf3Or5.list_multiples_of(30, 3)
+      assert [3, 6, 9, 12, 15, 18, 21, 24, 27] = MultiplesOf3Or5.list_multiples_of(30, 3)
     end
 
     test "returns a list of multiples of 5 below 20" do
-      assert [5, 10, 15, 20] = MultiplesOf3Or5.list_multiples_of(20, 5)
+      assert [5, 10, 15] = MultiplesOf3Or5.list_multiples_of(20, 5)
     end
 
     test "returns a list of multiples of 24 below 200" do
       assert [24, 48, 72, 96, 120, 144, 168, 192] = MultiplesOf3Or5.list_multiples_of(200, 24)
+    end
+
+    test "takes a list of multiples" do
+      assert [3, 5, 6, 9] = MultiplesOf3Or5.list_multiples_of(10, [3, 5])
+    end
+
+    test "returns no duplicate elements" do
+      assert [3, 5, 6, 9, 10, 12, 15] = MultiplesOf3Or5.list_multiples_of(16, [3, 5])
     end
 
     test "raises for non-integers" do
@@ -79,8 +87,16 @@ defmodule ProjectEuler.MultiplesOf3Or5Test do
   end
 
   describe "sum_multiples_of_3_or_5/1" do
-    test "returns a sum of the multiples of 3 or 5 below 10" do
-      assert MultiplesOf3Or5.sum_multiples_of_3_or_5(10) == 23
-    end
+    # test "returns a sum of the multiples of 3 or 5 below 10" do
+    #   assert MultiplesOf3Or5.sum_multiples_of_3_or_5(10) == 23
+    # end
+
+    # test "returns a sum of the multiples of 3 or 5 below 20" do
+    #   assert MultiplesOf3Or5.sum_multiples_of_3_or_5(20) == 78
+    # end
+
+    # test "returns a sum of the multiples of 3 or 5 below 30" do
+    #   assert MultiplesOf3Or5.sum_multiples_of_3_or_5(30) == 195
+    # end
   end
 end
