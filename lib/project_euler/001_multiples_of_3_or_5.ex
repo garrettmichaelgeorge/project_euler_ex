@@ -7,38 +7,38 @@ defmodule ProjectEuler.MultiplesOf3Or5 do
   - Project Euler Problem 1 (https://projecteuler.net/problem=1)
   """
 
-  defguard is_multiple_of(n, base) when rem(n, base) == 0
+  defguard is_multiple_of(n, divisor) when rem(n, divisor) == 0
 
   def run do
     sum_multiples_of(1000, [3, 5])
   end
 
   @spec multiple_of?(non_neg_integer, non_neg_integer) :: boolean
-  def multiple_of?(n, base) when is_multiple_of(n, base), do: true
+  def multiple_of?(n, divisor) when is_multiple_of(n, divisor), do: true
   def multiple_of?(n, _) when is_integer(n), do: false
   def multiple_of_3?(n), do: multiple_of?(n, 3)
   def multiple_of_5?(n), do: multiple_of?(n, 5)
 
   @spec list_multiples_of(non_neg_integer, non_neg_integer) :: [non_neg_integer]
-  def list_multiples_of(n, base) when is_integer(n) and is_integer(base) do
+  def list_multiples_of(n, divisor) when is_integer(n) and is_integer(divisor) do
     1..(n - 1)
-    |> Enum.filter(&multiple_of?(&1, base))
+    |> Enum.filter(&multiple_of?(&1, divisor))
   end
 
   @spec list_multiples_of(non_neg_integer, [non_neg_integer]) :: [non_neg_integer]
-  def list_multiples_of(n, base_list) when is_integer(n) and is_list(base_list) do
-    base_list
-    |> Enum.reduce([], fn base, acc ->
-      acc ++ list_multiples_of(n, base)
+  def list_multiples_of(n, divisors) when is_integer(n) and is_list(divisors) do
+    divisors
+    |> Enum.reduce([], fn divisor, acc ->
+      acc ++ list_multiples_of(n, divisor)
     end)
     |> Enum.sort()
     |> Enum.uniq()
   end
 
   @spec sum_multiples_of(non_neg_integer, [non_neg_integer]) :: non_neg_integer
-  def sum_multiples_of(n, base_list) when is_integer(n) and is_list(base_list) do
+  def sum_multiples_of(n, divisors) when is_integer(n) and is_list(divisors) do
     n
-    |> list_multiples_of(base_list)
+    |> list_multiples_of(divisors)
     |> Enum.sum()
   end
 
