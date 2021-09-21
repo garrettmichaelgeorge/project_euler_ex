@@ -92,7 +92,7 @@ defmodule ProjectEuler.MultiplesOf3Or5Test do
     end
 
     test "returns a sum of the multiples of 3 or 5 below 30" do
-      assert MultiplesOf3Or5.sum_multiples_of_3_or_5(30) == 195
+      assert MultiplesOf3Or5.sum_multiples_of(30, [3, 5]) == 195
     end
 
     test "raises for non-integers" do
