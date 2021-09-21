@@ -5,7 +5,6 @@ defmodule ProjectEuler.MultiplesOf3Or5Test do
 
   describe "multiple_of?/2" do
     @multiples_of_3 [3, 6, 9, 12, 24, 249, 1005, 81_456]
-
     for n <- @multiples_of_3 do
       test "returns true for #{n}" do
         n = unquote(Macro.escape(n))
@@ -22,7 +21,6 @@ defmodule ProjectEuler.MultiplesOf3Or5Test do
     end
 
     @multiples_of_5 [5, 10, 15, 20, 25, 2555]
-
     for n <- @multiples_of_5 do
       test "returns true for #{n}" do
         n = unquote(Macro.escape(n))
