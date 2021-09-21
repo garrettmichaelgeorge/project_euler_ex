@@ -9,13 +9,14 @@ defmodule ProjectEuler.MultiplesOf3Or5 do
 
   defguard is_multiple_of(n, divisor) when rem(n, divisor) == 0
 
-  def run do
-    sum_multiples_of(1000, [3, 5])
-  end
+  def run, do: sum_multiples_of(1000, [3, 5])
 
-  @spec multiple_of?(non_neg_integer, non_neg_integer) :: boolean
-  def multiple_of?(n, divisor) when is_multiple_of(n, divisor), do: true
-  def multiple_of?(n, divisor) when is_integer(n) and is_integer(divisor), do: false
+  @spec sum_multiples_of(non_neg_integer, [non_neg_integer]) :: non_neg_integer
+  def sum_multiples_of(n, divisors) when is_integer(n) and is_list(divisors) do
+    n
+    |> list_multiples_of(divisors)
+    |> Enum.sum()
+  end
 
   @spec list_multiples_of(non_neg_integer, non_neg_integer) :: [non_neg_integer]
   def list_multiples_of(n, divisor) when is_integer(n) and is_integer(divisor) do
@@ -33,10 +34,7 @@ defmodule ProjectEuler.MultiplesOf3Or5 do
     |> Enum.uniq()
   end
 
-  @spec sum_multiples_of(non_neg_integer, [non_neg_integer]) :: non_neg_integer
-  def sum_multiples_of(n, divisors) when is_integer(n) and is_list(divisors) do
-    n
-    |> list_multiples_of(divisors)
-    |> Enum.sum()
-  end
+  @spec multiple_of?(non_neg_integer, non_neg_integer) :: boolean
+  def multiple_of?(n, divisor) when is_multiple_of(n, divisor), do: true
+  def multiple_of?(n, divisor) when is_integer(n) and is_integer(divisor), do: false
 end
