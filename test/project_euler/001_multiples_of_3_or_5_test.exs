@@ -28,9 +28,8 @@ defmodule ProjectEuler.MultiplesOf3Or5Test do
     end
 
     test "raises for non-integers" do
-      assert_raise FunctionClauseError, fn ->
-        MultiplesOf3Or5.multiple_of_3?("foo")
-      end
+      assert_raise FunctionClauseError, fn -> MultiplesOf3Or5.multiple_of?("foo", 3) end
+      assert_raise FunctionClauseError, fn -> MultiplesOf3Or5.multiple_of?(3, "foo") end
     end
   end
 
