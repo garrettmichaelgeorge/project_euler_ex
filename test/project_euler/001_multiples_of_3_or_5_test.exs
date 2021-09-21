@@ -3,6 +3,12 @@ defmodule ProjectEuler.MultiplesOf3Or5Test do
 
   alias ProjectEuler.MultiplesOf3Or5
 
+  describe "run/0" do
+    test "returns the correct answer" do
+      assert MultiplesOf3Or5.run() == 233_168
+    end
+  end
+
   describe "multiple_of_3?/1" do
     @multiples_of_3 [3, 6, 9, 12, 24, 249, 1005, 81_456]
 
@@ -93,10 +99,6 @@ defmodule ProjectEuler.MultiplesOf3Or5Test do
 
     test "returns a sum of the multiples of 3 or 5 below 30" do
       assert MultiplesOf3Or5.sum_multiples_of(30, [3, 5]) == 195
-    end
-
-    test "returns a sum of the multiples of 3 or 5 below 1000" do
-      assert MultiplesOf3Or5.sum_multiples_of(1000, [3, 5]) == 233_168
     end
 
     test "raises for non-integers" do

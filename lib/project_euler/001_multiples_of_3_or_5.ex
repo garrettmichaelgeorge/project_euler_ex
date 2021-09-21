@@ -9,6 +9,10 @@ defmodule ProjectEuler.MultiplesOf3Or5 do
 
   defguard is_multiple_of(n, base) when rem(n, base) == 0
 
+  def run do
+    sum_multiples_of(1000, [3, 5])
+  end
+
   @spec multiple_of?(non_neg_integer, non_neg_integer) :: boolean
   def multiple_of?(n, base) when is_multiple_of(n, base), do: true
   def multiple_of?(n, _) when is_integer(n), do: false
