@@ -6,6 +6,7 @@ defmodule ProjectEuler.MultiplesOf3Or5 do
   Find the sum of all the multiples of 3 or 5 below 1000."
   - Project Euler Problem 1 (https://projecteuler.net/problem=1)
   """
+
   defguard is_multiple_of(n, base) when rem(n, base) == 0
 
   def multiple_of?(n, base) when is_multiple_of(n, base), do: true
@@ -19,6 +20,7 @@ defmodule ProjectEuler.MultiplesOf3Or5 do
     |> Enum.filter(&multiple_of?(&1, base))
   end
 
+  @spec list_multiples_of(non_neg_integer, [non_neg_integer]) :: [non_neg_integer]
   def list_multiples_of(n, base_list) when is_integer(n) and is_list(base_list) do
     base_list
     |> Enum.reduce([], fn base, acc ->
