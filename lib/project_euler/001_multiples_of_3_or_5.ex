@@ -16,8 +16,6 @@ defmodule ProjectEuler.MultiplesOf3Or5 do
   @spec multiple_of?(non_neg_integer, non_neg_integer) :: boolean
   def multiple_of?(n, divisor) when is_multiple_of(n, divisor), do: true
   def multiple_of?(n, divisor) when is_integer(n) and is_integer(divisor), do: false
-  def multiple_of_3?(n), do: multiple_of?(n, 3)
-  def multiple_of_5?(n), do: multiple_of?(n, 5)
 
   @spec list_multiples_of(non_neg_integer, non_neg_integer) :: [non_neg_integer]
   def list_multiples_of(n, divisor) when is_integer(n) and is_integer(divisor) do
