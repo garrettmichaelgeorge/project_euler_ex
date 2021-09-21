@@ -9,6 +9,7 @@ defmodule ProjectEuler.MultiplesOf3Or5 do
 
   defguard is_multiple_of(n, base) when rem(n, base) == 0
 
+  @spec multiple_of?(non_neg_integer, non_neg_integer) :: boolean
   def multiple_of?(n, base) when is_multiple_of(n, base), do: true
   def multiple_of?(n, _) when is_integer(n), do: false
   def multiple_of_3?(n), do: multiple_of?(n, 3)
@@ -30,6 +31,7 @@ defmodule ProjectEuler.MultiplesOf3Or5 do
     |> Enum.uniq()
   end
 
+  @spec sum_multiples_of(non_neg_integer, [non_neg_integer]) :: non_neg_integer
   def sum_multiples_of(n, base_list) when is_integer(n) and is_list(base_list) do
     n
     |> list_multiples_of(base_list)
