@@ -9,7 +9,7 @@ defmodule ProjectEuler.MultiplesOf3Or5Test do
     end
   end
 
-  describe "multiple_of_3?/1" do
+  describe "multiple_of?/2" do
     @multiples_of_3 [3, 6, 9, 12, 24, 249, 1005, 81_456]
 
     for n <- @multiples_of_3 do
@@ -91,7 +91,7 @@ defmodule ProjectEuler.MultiplesOf3Or5Test do
     end
   end
 
-  describe "sum_multiples_of_3_or_5/1" do
+  describe "sum_multiples_of/2" do
     test "returns a sum of the multiples of 3 or 5 below 10" do
       assert MultiplesOf3Or5.sum_multiples_of(10, [3, 5]) == 23
     end
