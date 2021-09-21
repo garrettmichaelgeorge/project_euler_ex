@@ -96,7 +96,9 @@ defmodule ProjectEuler.MultiplesOf3Or5Test do
     end
 
     test "raises for non-integers" do
-      assert_raise FunctionClauseError, fn -> MultiplesOf3Or5.sum_multiples_of_3_or_5(["foo"]) end
+      assert_raise FunctionClauseError, fn -> MultiplesOf3Or5.sum_multiples_of(["foo"], [2]) end
+      assert_raise FunctionClauseError, fn -> MultiplesOf3Or5.sum_multiples_of(2, "foo") end
+      assert_raise FunctionClauseError, fn -> MultiplesOf3Or5.sum_multiples_of(5, 2) end
     end
   end
 end
