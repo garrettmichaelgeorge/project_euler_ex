@@ -10,4 +10,8 @@ defmodule ProjectEuler.EvenFibonacciNumbersTest do
   test "generates the first 2 terms of the Fibonacci sequence" do
     assert EvenFibonacciNumbers.fibonacci_sequence(2) == [1, 2]
   end
+
+  test "generates the first 3 terms of the Fibonacci sequence" do
+    assert EvenFibonacciNumbers.fibonacci_sequence(3) == [1, 2, 3]
+  end
 end
