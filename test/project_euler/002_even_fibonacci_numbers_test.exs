@@ -25,18 +25,18 @@ defmodule ProjectEuler.FibonacciTest do
   end
 
   test "generates the first term of the Fibonacci sequence" do
-    assert Fibonacci.sequence_up_to(1) == [1]
+    assert Fibonacci.sequence_up_to(0) == [1]
   end
 
   test "generates the first 2 terms of the Fibonacci sequence" do
-    assert Fibonacci.sequence_up_to(2) == [1, 2]
+    assert Fibonacci.sequence_up_to(1) == [1, 2]
   end
 
   test "generates the first 3 terms of the Fibonacci sequence" do
-    assert Fibonacci.sequence_up_to(3) == [1, 2, 3]
+    assert Fibonacci.sequence_up_to(2) == [1, 2, 3]
   end
 
   test "generates the first 4 terms of the Fibonacci sequence" do
-    assert Fibonacci.sequence_up_to(4) == [1, 2, 3, 5]
+    assert Fibonacci.sequence_up_to(3) == [1, 2, 3, 5]
   end
 end

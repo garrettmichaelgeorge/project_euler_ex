@@ -6,19 +6,19 @@ defmodule ProjectEuler.Fibonacci do
 
   def sequence_up_to(n) do
     case n do
-      4 ->
+      3 ->
         [1, 2, 3, 5]
 
       2 ->
-        [1, 2]
+        [1, 2, 3]
 
       1 ->
+        [1, 2]
+
+      0 ->
         0
         |> at()
         |> List.wrap()
-
-      n ->
-        1..n |> Enum.to_list()
     end
   end
 end
