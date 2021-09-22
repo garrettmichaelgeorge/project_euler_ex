@@ -2,7 +2,7 @@ defmodule ProjectEuler.Fibonacci do
   def at(1), do: 1
   def at(2), do: 2
 
-  def fibonacci_sequence(n) do
+  def sequence_up_to(n) do
     case n do
       4 ->
         [1, 2, 3, 5]
