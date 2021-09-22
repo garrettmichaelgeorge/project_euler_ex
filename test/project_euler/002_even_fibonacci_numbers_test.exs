@@ -3,11 +3,11 @@ defmodule ProjectEuler.FibonacciTest do
 
   alias ProjectEuler.Fibonacci
 
+  @moduletag timeout: 2000
+
   @fibonacci_numbers [1, 2, 3, 5, 8, 13, 21, 34]
   for {n, i} <- Enum.with_index(@fibonacci_numbers) do
-    i = i + 1
-
-    test "generates the term at position #{i}" do
+    test "generates the term at position #{i} (0-indexed)" do
       i = unquote(Macro.escape(i))
       n = unquote(Macro.escape(n))
       assert Fibonacci.at(i) == n
