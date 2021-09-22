@@ -13,8 +13,12 @@ defmodule ProjectEuler.MultiplesOf3Or5 do
 
   @spec sum_multiples_of(non_neg_integer, [non_neg_integer]) :: non_neg_integer
   def sum_multiples_of(n, divisors) when is_integer(n) and is_list(divisors) do
-    n
-    |> list_multiples_of(divisors)
+    divisors
+    |> Enum.reduce([], fn divisor, acc ->
+      acc ++ list_multiples_of(n, divisor)
+    end)
+    |> Enum.sort()
+    |> Enum.uniq()
     |> Enum.sum()
   end
 
