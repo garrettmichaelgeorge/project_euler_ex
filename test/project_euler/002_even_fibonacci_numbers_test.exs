@@ -3,6 +3,8 @@ defmodule ProjectEuler.FibonacciTest do
 
   alias ProjectEuler.Fibonacci
 
+  # to handle infinite recursive loops...this should be unnecessary as long as
+  # inputs are being guarded properly
   @moduletag timeout: 2000
 
   @fibonacci_numbers [1, 2, 3, 5, 8, 13, 21, 34]
