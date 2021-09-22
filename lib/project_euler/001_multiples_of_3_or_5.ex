@@ -17,7 +17,6 @@ defmodule ProjectEuler.MultiplesOf3Or5 do
     |> Enum.reduce([], fn divisor, acc ->
       acc ++ list_multiples_of(n, divisor)
     end)
-    |> Enum.sort()
     |> Enum.uniq()
     |> Enum.sum()
   end
