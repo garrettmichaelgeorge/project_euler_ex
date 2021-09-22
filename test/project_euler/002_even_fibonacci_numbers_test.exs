@@ -18,6 +18,10 @@ defmodule ProjectEuler.FibonacciTest do
     assert_raise FunctionClauseError, fn -> Fibonacci.at(-1) end
   end
 
+  test "only accepts integers" do
+    assert_raise FunctionClauseError, fn -> Fibonacci.at(5.9) end
+  end
+
   test "generates the first term of the Fibonacci sequence" do
     assert Fibonacci.sequence_up_to(1) == [1]
   end
