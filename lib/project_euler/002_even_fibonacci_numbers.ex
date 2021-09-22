@@ -1,6 +1,6 @@
 defmodule ProjectEuler.EvenFibonacciNumbers do
-  def fibonacci(1), do: 1
-  def fibonacci(2), do: 2
+  def fibonacci_at(1), do: 1
+  def fibonacci_at(2), do: 2
 
   def fibonacci_sequence(n) do
     case n do
@@ -12,7 +12,7 @@ defmodule ProjectEuler.EvenFibonacciNumbers do
 
       1 ->
         1
-        |> fibonacci()
+        |> fibonacci_at()
         |> List.wrap()
 
       n ->
