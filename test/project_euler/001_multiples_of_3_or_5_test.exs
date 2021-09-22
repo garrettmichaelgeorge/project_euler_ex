@@ -59,14 +59,6 @@ defmodule ProjectEuler.MultiplesOf3Or5Test do
       assert [24, 48, 72, 96, 120, 144, 168, 192] = MultiplesOf3Or5.list_multiples_of(200, 24)
     end
 
-    test "takes a list of multiples" do
-      assert [3, 5, 6, 9] = MultiplesOf3Or5.list_multiples_of(10, [3, 5])
-    end
-
-    test "returns no duplicate elements" do
-      assert [3, 5, 6, 9, 10, 12, 15] = MultiplesOf3Or5.list_multiples_of(16, [3, 5])
-    end
-
     test "raises for non-integers" do
       assert_raise FunctionClauseError, fn ->
         MultiplesOf3Or5.list_multiples_of("foo", 5)
