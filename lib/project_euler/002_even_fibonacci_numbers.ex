@@ -1,4 +1,4 @@
-defmodule ProjectEuler.EvenFibonacciNumbers do
+defmodule ProjectEuler.Fibonacci do
   def fibonacci_at(1), do: 1
   def fibonacci_at(2), do: 2
 
