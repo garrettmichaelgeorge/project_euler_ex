@@ -1,8 +1,7 @@
 defmodule ProjectEuler.Fibonacci do
   def at(1), do: 1
   def at(2), do: 2
-  def at(3), do: 3
-  def at(4), do: 5
+  def at(n), do: at(n - 1) + at(n - 2)
 
   def sequence_up_to(n) do
     case n do
