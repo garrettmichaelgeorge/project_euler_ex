@@ -1,6 +1,6 @@
 defmodule ProjectEuler.Fibonacci do
-  def at(1), do: 1
-  def at(2), do: 2
+  def at(0), do: 1
+  def at(1), do: 2
   def at(n), do: at(n - 1) + at(n - 2)
 
   def sequence_up_to(n) do
@@ -12,7 +12,7 @@ defmodule ProjectEuler.Fibonacci do
         [1, 2]
 
       1 ->
-        1
+        0
         |> at()
         |> List.wrap()
 
