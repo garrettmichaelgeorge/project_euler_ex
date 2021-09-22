@@ -10,7 +10,7 @@ defmodule ProjectEuler.FibonacciTest do
     test "generates the term at position #{i} (0-indexed)" do
       i = unquote(Macro.escape(i))
       n = unquote(Macro.escape(n))
-      assert Fibonacci.at(i) == n
+      assert Fibonacci.at(i) == n, "expected Fibonacci sequence at index #{i} to be #{n}"
     end
   end
 
