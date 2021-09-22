@@ -4,7 +4,7 @@ defmodule ProjectEuler.FibonacciTest do
   alias ProjectEuler.Fibonacci
 
   test "generates the term at the first position" do
-    assert Fibonacci.fibonacci_at(1) == 1
+    assert Fibonacci.at(1) == 1
   end
 
   test "generates the first term of the Fibonacci sequence" do
