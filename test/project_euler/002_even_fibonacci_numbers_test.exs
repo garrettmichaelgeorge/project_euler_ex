@@ -14,22 +14,6 @@ defmodule ProjectEuler.FibonacciTest do
     end
   end
 
-  test "rejects negative numbers" do
-    assert_raise FunctionClauseError, fn -> Fibonacci.at(-1) end
-  end
-
-  test "at/1 only accepts positive integers" do
-    assert_raise FunctionClauseError, fn -> Fibonacci.at(5.9) end
-    assert_raise FunctionClauseError, fn -> Fibonacci.at("foo") end
-    assert_raise FunctionClauseError, fn -> Fibonacci.at([5]) end
-  end
-
-  test "sequence_up_to/1 only accepts positive integers" do
-    assert_raise FunctionClauseError, fn -> Fibonacci.sequence_up_to(-1) end
-    assert_raise FunctionClauseError, fn -> Fibonacci.sequence_up_to("foo") end
-    assert_raise FunctionClauseError, fn -> Fibonacci.sequence_up_to([5]) end
-  end
-
   test "generates the first term of the Fibonacci sequence" do
     assert Fibonacci.sequence_up_to(0) == [1]
   end
@@ -52,5 +36,21 @@ defmodule ProjectEuler.FibonacciTest do
 
   test "generates the first 6 terms of the Fibonacci sequence" do
     assert Fibonacci.sequence_up_to(5) == [1, 2, 3, 5, 8, 13]
+  end
+
+  test "rejects negative numbers" do
+    assert_raise FunctionClauseError, fn -> Fibonacci.at(-1) end
+  end
+
+  test "at/1 only accepts positive integers" do
+    assert_raise FunctionClauseError, fn -> Fibonacci.at(5.9) end
+    assert_raise FunctionClauseError, fn -> Fibonacci.at("foo") end
+    assert_raise FunctionClauseError, fn -> Fibonacci.at([5]) end
+  end
+
+  test "sequence_up_to/1 only accepts positive integers" do
+    assert_raise FunctionClauseError, fn -> Fibonacci.sequence_up_to(-1) end
+    assert_raise FunctionClauseError, fn -> Fibonacci.sequence_up_to("foo") end
+    assert_raise FunctionClauseError, fn -> Fibonacci.sequence_up_to([5]) end
   end
 end
