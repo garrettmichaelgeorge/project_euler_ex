@@ -14,6 +14,10 @@ defmodule ProjectEuler.FibonacciTest do
     end
   end
 
+  test "rejects negative numbers" do
+    assert_raise FunctionClauseError, fn -> Fibonacci.at(-1) end
+  end
+
   test "generates the first term of the Fibonacci sequence" do
     assert Fibonacci.sequence_up_to(1) == [1]
   end
