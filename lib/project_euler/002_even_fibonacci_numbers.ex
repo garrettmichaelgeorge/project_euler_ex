@@ -5,20 +5,6 @@ defmodule ProjectEuler.Fibonacci do
     do: at(n - 1) + at(n - 2)
 
   def sequence_up_to(n) do
-    case n do
-      3 ->
-        [1, 2, 3, 5]
-
-      2 ->
-        [1, 2, 3]
-
-      1 ->
-        [1, 2]
-
-      0 ->
-        0
-        |> at()
-        |> List.wrap()
-    end
+    Enum.map(0..n, &at/1)
   end
 end
