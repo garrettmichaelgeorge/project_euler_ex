@@ -39,4 +39,8 @@ defmodule ProjectEuler.FibonacciTest do
   test "generates the first 4 terms of the Fibonacci sequence" do
     assert Fibonacci.sequence_up_to(3) == [1, 2, 3, 5]
   end
+
+  test "generates the first 5 terms of the Fibonacci sequence" do
+    assert Fibonacci.sequence_up_to(4) == [1, 2, 3, 5, 8]
+  end
 end
