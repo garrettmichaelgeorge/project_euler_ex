@@ -3,7 +3,7 @@ defmodule ProjectEuler.FibonacciTest do
 
   alias ProjectEuler.Fibonacci
 
-  @fibonacci_numbers [1, 2, 3, 5, 8, 13]
+  @fibonacci_numbers [1, 2, 3, 5, 8, 13, 21, 34]
   for {n, i} <- Enum.with_index(@fibonacci_numbers) do
     i = i + 1
 
