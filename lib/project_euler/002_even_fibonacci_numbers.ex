@@ -25,8 +25,11 @@ defmodule ProjectEuler.Fibonacci do
     end
   end
 
-  def no_greater_than(_value) do
-    [2, 5]
+  def stream_no_greater_than(val) do
+    1..1_000_000_000
+    |> Stream.filter(&even?/1)
+    |> Stream.map(&at/1)
+    |> Stream.take_while(& &1 <= val)
   end
 
   def even_up_to(n) when is_integer(n) and n > 0 do

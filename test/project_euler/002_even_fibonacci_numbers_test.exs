@@ -106,12 +106,12 @@ defmodule ProjectEuler.FibonacciTest do
     end
   end
 
-  test "sums the Fibonacci values, from even terms, no greater than 10" do
-    assert Fibonacci.sum_evens_no_greater_than(10) == 7
-  end
-
   test "sums the Fibonacci values, from even terms, no greater than 5" do
     assert Fibonacci.sum_evens_no_greater_than(5) == 2
+  end
+
+  test "sums the Fibonacci values, from even terms, no greater than 10" do
+    assert Fibonacci.sum_evens_no_greater_than(10) == 7
   end
 
   @no_greater_than_solutions [
@@ -122,7 +122,7 @@ defmodule ProjectEuler.FibonacciTest do
     test "generates the Fibonacci sequence for even terms with values no greater than #{value} DELETE" do
       value = unquote(Macro.escape(value))
       expected = unquote(Macro.escape(expected))
-      assert Fibonacci.no_greater_than(value) == expected
+      assert Fibonacci.stream_no_greater_than(value) |> Enum.to_list() == expected
     end
   end
 end
