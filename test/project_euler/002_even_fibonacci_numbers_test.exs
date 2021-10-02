@@ -57,9 +57,9 @@ defmodule ProjectEuler.FibonacciTest do
   end
 
   @even_up_to_answers [
-    {1, 0},
-    {2, 2},
-    {3, 2}
+    {1, []},
+    {2, [2]},
+    {3, [2]}
   ]
 
   for {n, expected} <- @even_up_to_answers do
