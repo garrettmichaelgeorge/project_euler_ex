@@ -20,6 +20,7 @@ defmodule ProjectEuler.Fibonacci do
   end
 
   def sequence_up_to(n) when is_integer(n) and n >= 0 do
+    n = n - 1 # FIXME
     Enum.map(0..n, &at/1)
   end
 
