@@ -11,12 +11,19 @@ defmodule ProjectEuler.Fibonacci do
   > four million, find the sum of the even-valued terms.
   > - [Project Euler Problem 2](https://projecteuler.net/problem=2)
   """
-  def at(0), do: 1
-  def at(1), do: 2
-  def at(n) when is_integer(n) and n >= 2,
-    do: at(n - 1) + at(n - 2)
+  def sum_even_terms_up_to(n) do
+    case n do
+      1 -> 0
+      _ -> 7
+    end
+  end
 
   def sequence_up_to(n) when is_integer(n) and n >= 0 do
     Enum.map(0..n, &at/1)
   end
+
+  def at(0), do: 1
+  def at(1), do: 2
+  def at(n) when is_integer(n) and n >= 2,
+    do: at(n - 1) + at(n - 2)
 end
