@@ -122,6 +122,10 @@ defmodule ProjectEuler.FibonacciTest do
     assert Fibonacci.sum_evens_no_greater_than(50) == 54
   end
 
+  test "sums the Fibonacci values, from even terms, no greater than 80" do
+    assert Fibonacci.sum_evens_no_greater_than(80) == 54
+  end
+
   @no_greater_than_solutions [
     {10, [2, 5]},
   ]
