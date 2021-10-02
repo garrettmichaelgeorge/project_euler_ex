@@ -56,6 +56,10 @@ defmodule ProjectEuler.FibonacciTest do
     assert_raise FunctionClauseError, fn -> Fibonacci.up_to([5]) end
   end
 
+  test "even_up_to/1 generates the even-termed Fibonacci sequence up to term 1" do
+    assert Fibonacci.even_up_to(1) == 0
+  end
+
   @sum_even_terms [
     {1, 0},
     {2, 2},
