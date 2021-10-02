@@ -11,12 +11,10 @@ defmodule ProjectEuler.Fibonacci do
   > four million, find the sum of the even-valued terms.
   > - [Project Euler Problem 2](https://projecteuler.net/problem=2)
   """
-  def sum_even_terms_up_to(1), do: 0
-
   def sum_even_terms_up_to(n) do
-    2..n
+    1..n
+    |> Stream.filter(fn x -> rem(x, 2) == 0 end)
     |> Stream.map(&at/1)
-    |> Stream.take_every(2)
     |> Enum.sum()
   end
 
