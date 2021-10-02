@@ -23,7 +23,7 @@ defmodule ProjectEuler.Fibonacci do
 
   def even_up_to(n) do
     case n do
-      4 -> [2, 5]
+      n when n in [4, 5] -> [2, 5]
       n when n in [2, 3] -> [2]
       _ -> []
     end
