@@ -28,7 +28,9 @@ defmodule ProjectEuler.Fibonacci do
   end
 
   def up_to(n) when is_integer(n) and n > 0 do
-    Enum.map(1..n, &at/1)
+    1..n
+    |> Stream.map(&at/1)
+    |> Enum.to_list()
   end
 
   def at(1), do: 1
