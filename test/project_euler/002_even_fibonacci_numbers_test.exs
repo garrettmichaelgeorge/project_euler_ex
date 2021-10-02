@@ -63,7 +63,7 @@ defmodule ProjectEuler.FibonacciTest do
     {4, [2, 5]},
     {5, [2, 5]},
     {6, [2, 5, 13]},
-    {7, [2, 5, 13]},
+    {7, [2, 5, 13]}
   ]
 
   for {n, expected} <- @even_up_to_answers do
@@ -103,6 +103,18 @@ defmodule ProjectEuler.FibonacciTest do
              Expected: #{expected}
              Actual: #{actual}
              """
+    end
+  end
+
+  @less_than_solutions [
+    {10, [2, 5]}
+  ]
+
+  for {value, expected} <- @less_than_solutions do
+    test "generates the Fibonacci sequence for even terms with values no greater than #{value} DELETE" do
+      value = unquote(Macro.escape(value))
+      expected = unquote(Macro.escape(expected))
+      assert Fibonacci.less_than(value) == expected
     end
   end
 end

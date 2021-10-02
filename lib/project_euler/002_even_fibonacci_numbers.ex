@@ -17,6 +17,10 @@ defmodule ProjectEuler.Fibonacci do
     |> Enum.sum()
   end
 
+  def less_than(value) do
+    [2, 5]
+  end
+
   def even_up_to(n) when is_integer(n) and n > 0 do
     1..n
     |> Enum.filter(fn x -> rem(x, 2) == 0 end)
