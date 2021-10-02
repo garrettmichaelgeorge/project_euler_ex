@@ -59,7 +59,8 @@ defmodule ProjectEuler.FibonacciTest do
   @sum_even_terms [
     {1, 0},
     {2, 2},
-    {5, 7}
+    {3, 2},
+    {5, 7},
   ]
 
   for {n, expected} <- @sum_even_terms do
