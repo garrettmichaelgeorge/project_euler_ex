@@ -13,8 +13,7 @@ defmodule ProjectEuler.Fibonacci do
   """
   def sum_even_terms_up_to(n) do
     case n do
-      7 -> 20
-      6 -> 20
+      n when n in [6, 7] -> 20
       n when n in [2, 3] -> 2
       1 -> 0
       _ -> 7
