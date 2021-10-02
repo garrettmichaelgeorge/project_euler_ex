@@ -75,6 +75,11 @@ defmodule ProjectEuler.FibonacciTest do
     end
   end
 
+  test "even_up_to/1 only accepts integers greater than 0" do
+    assert_raise FunctionClauseError, fn -> Fibonacci.even_up_to(0) end
+    assert_raise FunctionClauseError, fn -> Fibonacci.even_up_to(:foo) end
+  end
+
   @sum_even_terms [
     {1, 0},
     {2, 2},

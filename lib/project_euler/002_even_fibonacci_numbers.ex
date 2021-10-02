@@ -17,13 +17,13 @@ defmodule ProjectEuler.Fibonacci do
     |> Enum.sum()
   end
 
-  def even_up_to(n) do
+  def even_up_to(n) when is_integer(n) and n > 0 do
     1..n
     |> Enum.filter(fn x -> rem(x, 2) == 0 end)
     |> Enum.map(&at/1)
   end
 
-  def up_to(n) when is_integer(n) and n >= 0 do
+  def up_to(n) when is_integer(n) and n > 0 do
     Enum.map(1..n, &at/1)
   end
 
