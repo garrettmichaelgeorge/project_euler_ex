@@ -22,7 +22,10 @@ defmodule ProjectEuler.Fibonacci do
   end
 
   def even_up_to(n) do
-    0
+    case n do
+      2 -> 2
+      _ -> 0
+    end
   end
 
   def up_to(n) when is_integer(n) and n >= 0 do
