@@ -13,7 +13,7 @@ defmodule ProjectEuler.Fibonacci do
   """
   def sum_even_terms_up_to(n) do
     1..n
-    |> Stream.filter(fn x -> rem(x, 2) == 0 end)
+    |> Stream.filter(&even?/1)
     |> Stream.map(&at/1)
     |> Enum.sum()
   end
@@ -24,7 +24,7 @@ defmodule ProjectEuler.Fibonacci do
 
   def even_up_to(n) when is_integer(n) and n > 0 do
     1..n
-    |> Stream.filter(fn x -> rem(x, 2) == 0 end)
+    |> Stream.filter(&even?/1)
     |> Stream.map(&at/1)
     |> Enum.to_list()
   end
@@ -40,4 +40,7 @@ defmodule ProjectEuler.Fibonacci do
 
   def at(n) when is_integer(n) and n > 2,
     do: at(n - 1) + at(n - 2)
+
+  def even?(n) when rem(n, 2) == 0, do: true
+  def even?(_), do: false
 end
