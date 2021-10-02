@@ -21,17 +21,13 @@ defmodule ProjectEuler.Fibonacci do
     [2, 5]
   end
 
-  def even_up_to(n) when is_integer(n) and n > 0 do
-    case n do
-      1 ->
-        []
+  def even_up_to(1), do: []
 
-      _ ->
-        2..n
-        |> Stream.map(&at/1)
-        |> Stream.take_every(2)
-        |> Enum.to_list()
-    end
+  def even_up_to(n) when is_integer(n) and n > 1 do
+    2..n
+    |> Stream.map(&at/1)
+    |> Stream.take_every(2)
+    |> Enum.to_list()
   end
 
   def up_to(n) when is_integer(n) and n > 0 do
