@@ -56,15 +56,23 @@ defmodule ProjectEuler.FibonacciTest do
     assert_raise FunctionClauseError, fn -> Fibonacci.sequence_up_to([5]) end
   end
 
-  test "sums even-valued terms up to 1" do
-    assert Fibonacci.sum_even_terms_up_to(1) == 0
-  end
+  @sum_even_terms [
+    {1, 0},
+    {2, 2},
+    {5, 7}
+  ]
 
-  test "sums even-valued terms up to 2" do
-    assert Fibonacci.sum_even_terms_up_to(2) == 2
-  end
+  for {n, expected} <- @sum_even_terms do
+    test "sums even-valued terms up to #{n}" do
+      n = unquote(Macro.escape(n))
+      expected = unquote(Macro.escape(expected))
+      actual = Fibonacci.sum_even_terms_up_to(n)
 
-  test "sums even-valued terms up to 5" do
-    assert Fibonacci.sum_even_terms_up_to(5) == 7
+      assert actual == expected,
+             """
+             Expected: #{expected}
+             Actual: #{actual}
+             """
+    end
   end
 end
