@@ -23,6 +23,11 @@ defmodule ProjectEuler.Fibonacci do
 
   def even_up_to(n) do
     case n do
+      n ->
+        1..n
+        |> Enum.filter(fn x -> rem(x, 2) == 0 end)
+        |> Enum.map(&at/1)
+
       n when n in [6, 7] -> [2, 5, 13]
       n when n in [4, 5] -> [2, 5]
       n when n in [2, 3] -> [2]
