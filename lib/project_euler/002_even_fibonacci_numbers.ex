@@ -12,25 +12,9 @@ defmodule ProjectEuler.Fibonacci do
   > - [Project Euler Problem 2](https://projecteuler.net/problem=2)
   """
   def sum_even_terms_up_to(n) do
-    case n do
-      n ->
-        n |> even_up_to() |> Enum.sum()
-
-      n when n in [8, 9] ->
-        54
-
-      n when n in [6, 7] ->
-        20
-
-      n when n in [4, 5] ->
-        7
-
-      n when n in [2, 3] ->
-        2
-
-      1 ->
-        0
-    end
+    n
+    |> even_up_to()
+    |> Enum.sum()
   end
 
   def even_up_to(n) do
