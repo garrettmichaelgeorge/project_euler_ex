@@ -24,12 +24,10 @@ defmodule ProjectEuler.Fibonacci do
     [2, 5]
   end
 
-  def even_up_to(1), do: []
-
-  def even_up_to(n) when is_integer(n) and n > 1 do
-    2..n
+  def even_up_to(n) when is_integer(n) and n > 0 do
+    1..n
+    |> Stream.filter(fn x -> rem(x, 2) == 0 end)
     |> Stream.map(&at/1)
-    |> Stream.take_every(2)
     |> Enum.to_list()
   end
 
