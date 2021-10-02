@@ -21,10 +21,6 @@ defmodule ProjectEuler.Fibonacci do
     end
   end
 
-  def sequence_up_to(n) when is_integer(n) and n >= 0 do
-    Enum.map(1..n, &at/1)
-  end
-
   def up_to(n) when is_integer(n) and n >= 0 do
     Enum.map(1..n, &at/1)
   end
