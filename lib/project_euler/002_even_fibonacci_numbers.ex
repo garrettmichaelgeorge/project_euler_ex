@@ -20,7 +20,7 @@ defmodule ProjectEuler.Fibonacci do
     |> Enum.sum()
   end
 
-  def less_than(value) do
+  def no_greater_than(value) do
     [2, 5]
   end
 

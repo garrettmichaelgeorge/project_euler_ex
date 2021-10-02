@@ -106,15 +106,15 @@ defmodule ProjectEuler.FibonacciTest do
     end
   end
 
-  @less_than_solutions [
-    {10, [2, 5]}
+  @no_greater_than_solutions [
+    {10, [2, 5]},
   ]
 
-  for {value, expected} <- @less_than_solutions do
+  for {value, expected} <- @no_greater_than_solutions do
     test "generates the Fibonacci sequence for even terms with values no greater than #{value} DELETE" do
       value = unquote(Macro.escape(value))
       expected = unquote(Macro.escape(expected))
-      assert Fibonacci.less_than(value) == expected
+      assert Fibonacci.no_greater_than(value) == expected
     end
   end
 end
