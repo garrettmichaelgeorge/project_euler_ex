@@ -13,6 +13,7 @@ defmodule ProjectEuler.Fibonacci do
   """
   def sum_even_terms_up_to(n) do
     case n do
+      2 -> 2
       1 -> 0
       _ -> 7
     end

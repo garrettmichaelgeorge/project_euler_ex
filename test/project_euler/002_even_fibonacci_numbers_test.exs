@@ -60,6 +60,10 @@ defmodule ProjectEuler.FibonacciTest do
     assert Fibonacci.sum_even_terms_up_to(1) == 0
   end
 
+  test "sums even-valued terms up to 2" do
+    assert Fibonacci.sum_even_terms_up_to(2) == 2
+  end
+
   test "sums even-valued terms up to 5" do
     assert Fibonacci.sum_even_terms_up_to(5) == 7
   end
