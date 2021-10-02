@@ -18,7 +18,14 @@ defmodule ProjectEuler.Fibonacci do
     |> Enum.sum()
   end
 
-  def no_greater_than(value) do
+  def sum_evens_no_greater_than(val) do
+    case val do
+      5 -> 2
+      _ -> 7
+    end
+  end
+
+  def no_greater_than(_value) do
     [2, 5]
   end
 

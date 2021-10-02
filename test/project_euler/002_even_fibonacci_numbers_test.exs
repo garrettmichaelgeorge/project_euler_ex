@@ -106,6 +106,14 @@ defmodule ProjectEuler.FibonacciTest do
     end
   end
 
+  test "sums the Fibonacci values, from even terms, no greater than 10" do
+    assert Fibonacci.sum_evens_no_greater_than(10) == 7
+  end
+
+  test "sums the Fibonacci values, from even terms, no greater than 5" do
+    assert Fibonacci.sum_evens_no_greater_than(5) == 2
+  end
+
   @no_greater_than_solutions [
     {10, [2, 5]},
   ]
